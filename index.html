@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Arena | Elite Sports & Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .facility-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-card {
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl font-extrabold tracking-tighter text-blue-500 uppercase">Olympus<span class="text-white">Arena</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-blue-500 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#facilities" class="hover:text-blue-500 px-3 py-2 text-sm font-medium transition-colors">Facilities</a>
+                        <a href="#events" class="hover:text-blue-500 px-3 py-2 text-sm font-medium transition-colors">Events</a>
+                        <a href="#membership" class="hover:text-blue-500 px-3 py-2 text-sm font-medium transition-colors">Membership</a>
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full text-sm font-bold transition-all">Join Now</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight leading-none">
+                UNLEASH YOUR <span class="text-blue-500">POTENTIAL</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                The world's premier multi-sport destination. Professional courts, Olympic pools, and elite coaching under one roof.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#facilities" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105">Explore Arena</a>
+                <a href="#events" class="border border-white hover:bg-white hover:text-black text-white px-8 py-4 rounded-lg font-bold text-lg transition-all">Book Tickets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-blue-600">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-extrabold mb-2">50,000</div>
+                    <div class="text-blue-100 uppercase tracking-widest text-sm">Seating Capacity</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-extrabold mb-2">12+</div>
+                    <div class="text-blue-100 uppercase tracking-widest text-sm">Professional Courts</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-extrabold mb-2">24/7</div>
+                    <div class="text-blue-100 uppercase tracking-widest text-sm">Member Access</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-extrabold mb-2">100+</div>
+                    <div class="text-blue-100 uppercase tracking-widest text-sm">Elite Coaches</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-24 px-4 bg-slate-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 uppercase">World-Class Facilities</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Facility 1 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] facility-card">
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Basketball" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90 p-8 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold mb-2">Championship Courts</h3>
+                        <p class="text-gray-300 text-sm">Full-size FIBA standard hardwood courts with digital scoring and VIP boxes.</p>
+                        <a href="#" class="mt-4 text-blue-500 font-bold hover:text-blue-400">Learn More &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Facility 2 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] facility-card">
+                    <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Swimming" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90 p-8 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold mb-2">Aquatics Center</h3>
+                        <p class="text-gray-300 text-sm">Olympic-sized 50m heated pool with advanced timing systems and diving boards.</p>
+                        <a href="#" class="mt-4 text-blue-500 font-bold hover:text-blue-400">Learn More &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Facility 3 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] facility-card">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gym" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90 p-8 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold mb-2">Performance Gym</h3>
+                        <p class="text-gray-300 text-sm">State-of-the-art strength and conditioning floor with recovery zone.</p>
+                        <a href="#" class="mt-4 text-blue-500 font-bold hover:text-blue-400">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section id="events" class="py-24 px-4 bg-slate-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4 uppercase">Match Day Events</h2>
+                    <p class="text-gray-400">Don't miss the upcoming action at the Arena</p>
+                </div>
+                <a href="#" class="text-blue-500 font-bold border-b border-blue-500 pb-1">View Full Calendar</a>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Event 1 -->
+                <div class="glass-effect rounded-xl p-6 flex flex-col md:flex-row items-center justify-between group hover:border-blue-500/50 transition-all">
+                    <div class="flex items-center gap-8 mb-4 md:mb-0">
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold">24</div>
+                            <div class="text-blue-500 uppercase text-xs font-bold">Oct</div>
+                        </div>
+                        <div>
+                            <div class="text-blue-500 font-bold text-sm uppercase">Basketball League</div>
+                            <h4 class="text-xl font-bold">Titans vs. Shadow Warriors</h4>
+                            <p class="text-gray-500 text-sm">7:00 PM | Main Arena Court 1</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-green-500 bg-green-500/10 px-3 py-1 rounded text-xs font-bold uppercase">Selling Fast</span>
+                        <button class="bg-white text-black px-6 py-2 rounded font-bold hover:bg-blue-500 hover:text-white transition-all">Buy Tickets</button>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="glass-effect rounded-xl p-6 flex flex-col md:flex-row items-center justify-between group hover:border-blue-500/50 transition-all">
+                    <div class="flex items-center gap-8 mb-4 md:mb-0">
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold">27</div>
+                            <div class="text-blue-500 uppercase text-xs font-bold">Oct</div>
+                        </div>
+                        <div>
+                            <div class="text-blue-500 font-bold text-sm uppercase">Regional Open</div>
+                            <h4 class="text-xl font-bold">Tennis Singles Quarter-Finals</h4>
+                            <p class="text-gray-500 text-sm">10:00 AM | East Grass Courts</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-gray-400 bg-gray-400/10 px-3 py-1 rounded text-xs font-bold uppercase">Open Entry</span>
+                        <button class="bg-white text-black px-6 py-2 rounded font-bold hover:bg-blue-500 hover:text-white transition-all">Register</button>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="glass-effect rounded-xl p-6 flex flex-col md:flex-row items-center justify-between group hover:border-blue-500/50 transition-all">
+                    <div class="flex items-center gap-8 mb-4 md:mb-0">
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold">02</div>
+                            <div class="text-blue-500 uppercase text-xs font-bold">Nov</div>
+                        </div>
+                        <div>
+                            <div class="text-blue-500 font-bold text-sm uppercase">Community Event</div>
+                            <h4 class="text-xl font-bold">Midnight Yoga & Recovery</h4>
+                            <p class="text-gray-500 text-sm">11:30 PM | Sky Studio</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-blue-400 bg-blue-400/10 px-3 py-1 rounded text-xs font-bold uppercase">Member Exclusive</span>
+                        <button class="bg-white text-black px-6 py-2 rounded font-bold hover:bg-blue-500 hover:text-white transition-all">Book Spot</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Membership Section -->
+    <section id="membership" class="py-24 px-4 bg-blue-600 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-5xl font-extrabold mb-6 uppercase tracking-tight">Become an <span class="text-black">Olympian</span></h2>
+                    <p class="text-blue-100 text-lg mb-8">Join the elite community. Get early access to event tickets, personal training discounts, and 24/7 access to our premium facilities.</p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-white"></i>
+                            <span>All-access pass to 4 specialized zones</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-white"></i>
+                            <span>Monthly guest passes for friends</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-white"></i>
+                            <span>Free health & performance screening</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-2xl text-slate-900">
+                    <form id="membershipForm" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-500 mb-1">First Name</label>
+                                <input type="text" class="w-full border border-gray-200 p-3 rounded-lg focus:outline-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Last Name</label>
+                                <input type="text" class="w-full border border-gray-200 p-3 rounded-lg focus:outline-blue-500" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Email Address</label>
+                            <input type="email" class="w-full border border-gray-200 p-3 rounded-lg focus:outline-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Primary Sport Interest</label>
+                            <select class="w-full border border-gray-200 p-3 rounded-lg focus:outline-blue-500">
+                                <option>Basketball</option>
+                                <option>Tennis</option>
+                                <option>Swimming</option>
+                                <option>General Fitness</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-slate-800 transition-all uppercase">Get Started Today</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-20 pb-10 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <span class="text-3xl font-extrabold tracking-tighter text-blue-500 uppercase">Olympus<span class="text-white">Arena</span></span>
+                    <p class="mt-4 text-gray-500 text-sm">Redefining the standard of sports and athletic training since 2010. Proudly hosting champions.</p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 uppercase tracking-widest text-sm">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-blue-500">Arena Map</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Coaching Staff</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Booking Rules</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Shop Merchandise</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 uppercase tracking-widest text-sm">Legal</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-blue-500">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Safety Guidelines</a></li>
+                        <li><a href="#" class="hover:text-blue-500">Liability Waiver</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 uppercase tracking-widest text-sm">Contact Us</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li class="flex gap-3">
+                            <i class="fas fa-map-marker-alt text-blue-500"></i>
+                            <span>123 Stadium Drive, Sport City, SC 54321</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-phone text-blue-500"></i>
+                            <span>+1 (555) 800-ARENA</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-envelope text-blue-500"></i>
+                            <span>hello@olympusarena.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-900 pt-8 text-center text-gray-600 text-xs uppercase tracking-widest">
+                &copy; 2024 Olympus Arena Multi-Sport Complex. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission feedback
+        document.getElementById('membershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'PROCESSING...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = 'WELCOME OLYMPIAN!';
+                btn.style.backgroundColor = '#10B981'; // Green
+                e.target.reset();
+            }, 1500);
+        });
+
+        // Mobile menu toggle (functional for responsiveness)
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        mobileMenuBtn.addEventListener('click', () => {
+            // In a real app, this would show/hide a sidebar or dropdown
+            const nav = document.querySelector('nav div div div.hidden.md\\:block');
+            console.log('Toggle Menu');
+        });
+    </script>
+</body>
+</html>
